@@ -1,6 +1,6 @@
 # Preminun-shop-web-app-with-vitejs-and-reactjs
 using vitejs to build this application with React and Strapi.io
-
+i have used strapi  to make api, do changes in .env files to added api_token and address.
 #import strapi database into your strapi project (sqlite) Password : 12345
 ```
 npm run strapi import -- -f premiumShop.tar.gz.enc --key 12345
@@ -32,6 +32,7 @@ npm run strapi import -- -f premiumShop.tar.gz.enc --key 12345
 ![image](https://github.com/getsettalk/Preminun-shop-web-app-with-vitejs-and-reactjs/assets/49394996/d9c9e145-c54d-4edf-b4af-453269b6fe7a)
 
 ![image](https://github.com/getsettalk/Preminun-shop-web-app-with-vitejs-and-reactjs/assets/49394996/85cd7e80-bbb4-4c14-83ce-1c14b41116ea)
+
 
 
 ![Uploading image.png…]()
