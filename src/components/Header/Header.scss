@@ -1,0 +1,110 @@
+@use '../../css-config/variable' as v;
+@import "../../css-config/mixinis.scss";
+
+.main-header {
+    background: #DA22FF;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    padding: 0 20px;
+    color: v.$white;
+    box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 5px 6px -3px rgba(0,0,0,0.75);
+    z-index: 999;
+
+    @include md{
+        padding: 0 40px;
+        // background-color: black;
+    }
+
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        max-width: 1200px;
+        margin: 0 auto;
+        @include md {
+            height: 70px;
+        }
+        .left {
+            list-style: none;
+            display: none;
+            gap: 1.2rem;
+            @include md {
+                display: flex;
+            }
+            li {
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+        }
+
+        .center {
+            font-size: 22px;
+            font-weight: 900;
+            cursor: pointer;
+            @include md {
+                position: absolute;
+                left: 50% ;
+                font-size: 33px;
+                transform: translateX(-50%);
+            }
+        }
+
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            font-size: 19px;
+            @include md {
+                gap: 25px;
+            }
+            svg {
+                font-size: 20px;
+                cursor: pointer;
+                @include md {
+                    font-size: 24px;
+                }
+            }
+
+            .cart-icon {
+                position: relative;
+
+                span {
+                    min-width: 20px;
+                    text-align: center;
+                    background-color: v.$pink;
+                    color: v.$white;
+                    padding: 2.4px;
+                    position: absolute;
+                    top: -5px;
+                    right: -12px;
+                    font-size: 12px;
+                    line-height: 1;
+                    border-radius: 10px;
+                }
+            }
+        }
+      
+    }
+    &.sticky-header{
+        position: sticky;
+        top: 0;
+        transform: translateY(-80px);
+        left: 0;
+        animation: stickyHeader 0.3s ease forwards;
+    }
+}
+
+@keyframes stickyHeader {
+    0%{
+        transform: translateY(-80px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}

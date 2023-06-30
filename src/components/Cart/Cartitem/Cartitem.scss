@@ -1,0 +1,114 @@
+@use '../../../css-config/variable' as v;
+@import '../../../css-config/mixinis.scss';
+
+.cart-products {
+    flex-grow: 1;
+
+    overflow:scroll;
+    .cart-product {
+        padding: 15px 15px;
+        display: flex;
+        gap: 10px;
+
+        .img-container {
+            background: v.$shadowBlack;
+            width: 60px;
+            height: 60px;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .prod-details {
+               width: 100%;
+            overflow: hidden;
+            position: relative;
+
+            .name {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 16px;
+                margin-bottom: 10px;
+                line-height: 1;
+                font-weight: 600;
+                display: block;
+
+            }
+
+            .text {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                font-size: 12px;
+                font-weight: 600;
+
+                .highlight {
+                    color: v.$purple;
+                }
+            }
+
+            svg {
+                position: absolute;
+                top: 0;
+                right: 0;
+                cursor: pointer;
+                background-color: rgb(255, 71, 71);
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+
+            .quantity-buttons {
+                width: fit-content;
+                display: flex;
+                border: 2px solid v.$fewBlack;
+                margin-bottom: 8px;
+                height: 30px;
+
+                span {
+                    font-size: 14px;
+                    width: 30px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    color: #6b6b6b6b;
+
+                    &:nth-child(1) {
+                        border-right: 1px solid v.$fewBlack;
+                        font-size: 18px;
+
+                        &:hover {
+                            background-color: v.$purple;
+                            color: v.$white;
+                            cursor: pointer;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        width: 40px;
+                        color: v.$black;
+                    }
+
+                    &:nth-child(3) {
+                        font-size: 18px;
+                        border-left: 1px solid v.$fewBlack;
+
+                        &:hover {
+                            background-color: v.$purple;
+                            color: v.$white;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &:hover {
+            background-color: v.$shadowBlack;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@use '../../../css-config/variable' as v;
+@import '../../../css-config/mixinis.scss';
+
+.newsletter-section {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    background : linear-gradient(0deg, rgba(255, 46, 168, 0.3), #acacac), url('../../../assets/newsletter/earphonesbg.jpg'), no-repeat;
+    background-position: center;
+    background-size: cover;
+    .newsletter-content{
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .small-text{
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        color: rgba(0,0,0,0.5);
+        font-weight: 700;
+    }
+    .big-text{
+        margin-bottom: 20px;
+        font-size: 22px;
+        line-height: 30px;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding: 0 30px;
+        @include md {
+            font-style: 20px;
+        }
+    }
+    .form {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 10px;
+        input {
+            width: 200px;
+            height: 40px;
+            border-radius: 0;
+            border: 1px solid v.$fewBlack;
+            padding: 0 12px;
+            font-size: 16px;
+            outline: 0;
+            @include md {
+                width: 300px;
+            }
+        }
+        button {
+            outline: 0;
+            border: 0;
+            height: 40px;
+            width: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px;
+            color:  v.$white;
+            background-color:v.$purple ;
+            border-bottom: 3px solid v.$purple;
+        }
+    }
+    .text{
+        margin-bottom: 20px;
+        font-size: 14px;
+        font-weight: 700;
+        color:v.$fewBlack ;
+    }
+    .social-icons{
+        display: flex;
+        gap: 10px;
+        .icon {
+            width: 30px;
+            font-size: 22px;
+            height: 30px;
+            color: v.$white;
+            background-color: v.$black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+    }
+}

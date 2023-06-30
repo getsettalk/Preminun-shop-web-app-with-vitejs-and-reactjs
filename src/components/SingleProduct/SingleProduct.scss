@@ -1,0 +1,208 @@
+@use "../../css-config/variable" as v;
+@import "../../css-config/mixinis.scss";
+
+.single-product-main-content {
+    margin: 20px 0;
+
+    @include md {
+        margin: 75px 0;
+    }
+
+    .layout {
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+
+        @include md {
+            max-width: 1200px;
+        }
+
+        .single-product-page {
+            display: flex;
+            flex-direction: column;
+
+            @include md {
+                flex-direction: row;
+            }
+
+            .left {
+                width: 100%;
+                background-color: v.$shadowBlack;
+                flex-shrink: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                object-fit: contain;
+
+                @include md {
+                    position: relative;
+                    width: 500px;
+                    height: 500px;
+
+                }
+
+                img {
+                    width: 100%;
+                    display: block;
+
+                    @include md {
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                        padding: 5px;
+                    }
+
+                }
+            }
+
+            .right {
+                display: flex;
+                flex-direction: column;
+                padding-top: 20px;
+
+                @include md {
+                    padding: 0 35px;
+                }
+
+                .name {
+                    font-size: 20px;
+                    line-height: 20px;
+                    margin-bottom: 20px;
+
+                    @include md {
+                        font-size: 24px;
+                        line-height: 32px;
+                    }
+                }
+
+                .price {
+                    font-size: 24px;
+                    line-height: 32px;
+                    margin-bottom: 20px;
+                }
+
+                .desc {
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin-bottom: 20px;
+                    color: #6b6b6b6b;
+
+                    @include md {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
+                }
+
+                .cart-buttons {
+                    display: flex;
+
+                    @include md {
+                        margin-top: 30px;
+                    }
+
+                    .quantity-buttons {
+                        width: fit-content;
+                        display: flex;
+                        border: 2px solid v.$fewBlack;
+                        margin-right: 10px;
+                        height: 50px;
+
+                        span {
+                            font-size: 18px;
+                            width: 40px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+                            color: #6b6b6b6b;
+
+                            &:nth-child(1) {
+                                border-right: 2px solid v.$fewBlack;
+
+                                &:hover {
+                                    background-color: v.$purple;
+                                    color: v.$white;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                width: 60px;
+                                color: v.$black;
+                            }
+
+                            &:nth-child(3) {
+                                border-left: 2px solid v.$fewBlack;
+
+                                &:hover {
+                                    background-color: v.$purple;
+                                    color: v.$white;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+                    .add-to-cart-button {
+                        outline: 0;
+                        border: 0;
+                        height: 50px;
+                        width: 180px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        cursor: pointer;
+                        font-size: 16px;
+                        color: v.$white;
+                        background-color: v.$purple;
+                        border-bottom: 3px solid #6516aa;
+                        flex-grow: 1;
+
+                        @include md {
+                            flex-grow: unset;
+                        }
+
+                        &:hover {
+                            background-color: #bd74fc;
+                            color: rgb(205, 207, 208);
+                        }
+
+                        &:focus {
+                            background-color: rgb(71, 65, 255);
+                        }
+                    }
+                }
+
+                .divider {
+                    margin: 20px 0;
+                    height: 1px;
+                    background-color: v.$shadowBlack;
+                    width: 100%;
+                }
+
+                .info-item {
+                    .text-bold {
+                        font-size: 18px;
+                        font-weight: 500;
+                        display: block;
+
+                        &:nth-child(1) {
+                            margin-bottom: 20px;
+                        }
+
+                        span {
+                            font-size: 16px;
+                            font-weight: 400;
+                            color: v.$fewBlack;
+                        }
+
+                        svg {
+                            margin: 0 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
